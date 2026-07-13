@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Unspoken Conversations — Teens Edition | Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#F5871F;
+    --orange-deep:#D9660A;
+    --orange-dark:#B84E05;
+    --coral:#E8432E;
+    --red-deep:#C81F3D;
+    --navy:#1B2A5B;
+    --navy-deep:#101B3D;
+    --pink:#EC1E79;
+    --teal:#12AFC7;
+    --yellow:#FFC72C;
+    --purple:#6C3FA6;
+    --cream:#FFF8ED;
+    --paper:#FFFDF8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Nunito',sans-serif;
+    background:var(--cream);
+    color:var(--navy-deep);
+    -webkit-font-smoothing:antialiased;
+  }
+  .doodlebg{
+    position:relative;
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255,201,92,0.55), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 110%, rgba(184,78,5,0.45), transparent 55%),
+      linear-gradient(160deg, var(--orange) 0%, var(--orange-deep) 55%, var(--orange-dark) 100%);
+    overflow:hidden;
+  }
+  .doodlebg::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    opacity:0.5;
+    mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+  .doodlebg::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,0.12) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(255,255,255,0.09) 2px, transparent 2px);
+    background-size: 130px 130px, 90px 90px;
+    background-position: 0 0, 45px 60px;
+    pointer-events:none;
+  }
+  .confetti{position:absolute;z-index:2;pointer-events:none;}
+  .confetti svg{display:block;}
+  .hero{
+    padding:52px 24px 40px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    z-index:3;
+  }
+  .corner-tri{
+    position:absolute;
+    width:0;
+    height:0;
+    z-index:2;
+    filter:drop-shadow(2px 3px 3px rgba(0,0,0,0.15));
+  }
+  .eyebrow{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    letter-spacing:6px;
+    font-size:13px;
+    color:#fff;
+    opacity:0.92;
+    margin-bottom:18px;
+  }
+  .host-pill{
+    display:inline-block;
+    background:var(--red-deep);
+    color:#fff;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:1.5px;
+    padding:8px 18px;
+    border-radius:6px;
+    margin-bottom:22px;
+    box-shadow:0 3px 0 rgba(0,0,0,0.15);
+  }
+  .wordmark{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:clamp(38px,9vw,64px);
+    line-height:1.02;
+    letter-spacing:-1px;
+    margin-bottom:6px;
+  }
+  .wordmark .w1{color:var(--purple);}
+  .wordmark .w2{color:var(--pink);}
+  .wordmark .w3{color:var(--yellow);-webkit-text-stroke:1.5px var(--navy-deep);}
+  .wordmark .w4{color:var(--teal);}
+  .wordmark .w5{color:var(--purple);}
+  .wordmark2{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:clamp(30px,7vw,50px);
+    color:var(--navy-deep);
+    background:#fff;
+    display:inline-block;
+    padding:6px 26px;
+    border-radius:40px;
+    border:4px solid var(--teal);
+    margin-top:10px;
+    box-shadow:5px 6px 0 var(--purple);
+  }
+  .teens-edition{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:clamp(24px,5.5vw,36px);
+    color:#fff;
+    margin-top:26px;
+    letter-spacing:2px;
+    text-shadow:2px 3px 0 rgba(0,0,0,0.18);
+  }
+  .tagline{
+    max-width:560px;
+    margin:20px auto 0;
+    color:#fff;
+    font-weight:800;
+    font-size:16px;
+    line-height:1.5;
+  }
+  .topics{
+    margin-top:14px;
+    color:#fff;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:2px;
+    opacity:0.95;
+  }
+
+  .banner{
+    background:linear-gradient(90deg,var(--coral),var(--red-deep));
+    padding:22px 24px;
+    text-align:center;
+  }
+
+  .details{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    padding:26px 20px;
+    background:var(--navy);
+  }
+  .detail-card{
+    background:var(--navy-deep);
+    border:2px solid rgba(255,255,255,0.12);
+    border-radius:14px;
+    padding:14px 20px;
+    min-width:130px;
+    text-align:center;
+    color:#fff;
+  }
+  .detail-card .label{
+    font-size:11px;
+    letter-spacing:1.5px;
+    color:var(--yellow);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .detail-card .value{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:16px;
+  }
+
+  main{
+    max-width:640px;
+    margin:0 auto;
+    padding:40px 20px 60px;
+  }
+
+  .section-title{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:26px;
+    color:var(--navy-deep);
+    text-align:center;
+    margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center;
+    color:#6b6355;
+    font-weight:600;
+    font-size:14px;
+    margin-bottom:28px;
+  }
+
+  .bubble-card{
+    background:var(--paper);
+    border:3px solid var(--navy-deep);
+    border-radius:26px;
+    border-top-left-radius:6px;
+    padding:30px 26px;
+    box-shadow:6px 7px 0 var(--purple);
+    position:relative;
+  }
+
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    color:var(--navy-deep);
+    margin-bottom:7px;
+  }
+  .field label .req{color:var(--coral);}
+  .field input,.field select{
+    width:100%;
+    font-family:'Nunito',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    padding:12px 14px;
+    border:2px solid #E6DCC8;
+    border-radius:12px;
+    background:#fff;
+    color:var(--navy-deep);
+    outline:none;
+    transition:border-color .15s;
+  }
+  .field input:focus,.field select:focus{
+    border-color:var(--teal);
+  }
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:480px){.row2{grid-template-columns:1fr;}}
+
+  .divider-label{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:1.5px;
+    color:var(--pink);
+    text-transform:uppercase;
+    margin:22px 0 14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .divider-label::after{
+    content:'';
+    flex:1;
+    height:2px;
+    background:#F0E6D2;
+  }
+
+  .consent-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    background:#F5F0E4;
+    border-radius:12px;
+    padding:12px 14px;
+    margin:20px 0 16px;
+    cursor:pointer;
+  }
+  .consent-row input{
+    margin-top:3px;
+    width:17px;
+    height:17px;
+    accent-color:var(--pink);
+    flex-shrink:0;
+  }
+  .consent-row span{
+    font-size:13px;
+    font-weight:700;
+    color:var(--navy-deep);
+    line-height:1.5;
+  }
+
+  .submit-btn{
+    width:100%;
+    margin-top:8px;
+    background:var(--pink);
+    color:#fff;
+    border:none;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:0.5px;
+    padding:16px;
+    border-radius:14px;
+    cursor:pointer;
+    box-shadow:0 5px 0 var(--navy-deep);
+    transition:transform .08s;
+  }
+  .submit-btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--navy-deep);}
+  .submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
+
+  .payment-box{
+    margin-top:32px;
+    background:var(--yellow);
+    border:3px solid var(--navy-deep);
+    border-radius:18px;
+    padding:22px;
+  }
+  .payment-box h3{
+    font-family:'Baloo 2',sans-serif;
+    font-size:18px;
+    color:var(--navy-deep);
+    margin-bottom:10px;
+  }
+  .payment-box p{
+    font-size:14px;
+    font-weight:700;
+    color:var(--navy-deep);
+    line-height:1.6;
+  }
+  .payment-box ul{margin:10px 0 0 18px;font-weight:700;font-size:14px;color:var(--navy-deep);}
+
+  .success-box{
+    display:none;
+    text-align:center;
+    padding:34px 26px;
+    background:var(--paper);
+    border:3px solid var(--teal);
+    border-radius:26px;
+    box-shadow:6px 7px 0 var(--teal);
+  }
+  .success-box.show{display:block;}
+  .success-box h2{
+    font-family:'Baloo 2',sans-serif;
+    color:var(--navy-deep);
+    font-size:24px;
+    margin-bottom:10px;
+  }
+  .success-box p{color:#5b5347;font-weight:600;margin-bottom:18px;line-height:1.6;}
+
+  .wa-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#25D366;
+    color:#fff;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:14px;
+    font-size:15px;
+    box-shadow:0 4px 0 #1a9e4c;
+  }
+
+  .float-wa{
+    position:fixed;
+    bottom:22px;
+    right:22px;
+    background:#25D366;
+    color:#fff;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    z-index:50;
+  }
+  .float-wa svg{width:30px;height:30px;fill:#fff;}
+
+  footer{
+    background:var(--navy-deep);
+    padding:40px 20px 30px;
+    text-align:center;
+    color:#fff;
+  }
+  footer .qr-wrap{
+    background:#fff;
+    display:inline-block;
+    padding:14px;
+    border-radius:16px;
+    margin-bottom:14px;
+  }
+  footer .qr-wrap img{display:block;width:170px;height:170px;}
+  footer p{font-size:12px;color:#9AA3C4;max-width:420px;margin:10px auto 0;line-height:1.6;}
+  footer .contact-line{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--yellow);
+    margin-top:16px;
+  }
+
+  .admin-toggle{
+    text-align:center;
+    margin-top:36px;
+  }
+  .admin-toggle button{
+    background:none;
+    border:none;
+    color:#8a8272;
+    font-size:12px;
+    font-weight:700;
+    text-decoration:underline;
+    cursor:pointer;
+  }
+  .admin-panel{
+    display:none;
+    margin-top:16px;
+    background:#fff;
+    border:2px solid #E6DCC8;
+    border-radius:14px;
+    padding:18px;
+    font-size:13px;
+  }
+  .admin-panel.show{display:block;}
+  .admin-panel table{width:100%;border-collapse:collapse;font-size:12px;}
+  .admin-panel th,.admin-panel td{text-align:left;padding:6px 8px;border-bottom:1px solid #eee;white-space:nowrap;}
+  .admin-panel .count{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:15px;color:var(--navy-deep);margin-bottom:10px;}
+  .admin-panel .scroll{overflow-x:auto;}
+</style>
+</head>
+<body>
+
+<div class="doodlebg">
+  <div class="corner-tri" style="top:-10px;left:-10px;border-style:solid;border-width:70px 70px 0 0;border-color:var(--purple) transparent transparent transparent;"></div>
+  <div class="corner-tri" style="top:0;left:52px;border-style:solid;border-width:44px 0 0 44px;border-color:transparent transparent transparent var(--teal);"></div>
+  <div class="corner-tri" style="top:-10px;right:-10px;border-style:solid;border-width:0 70px 70px 0;border-color:transparent var(--pink) transparent transparent;"></div>
+  <div class="corner-tri" style="top:0;right:52px;border-style:solid;border-width:0 44px 44px 0;border-color:transparent var(--yellow) transparent transparent;"></div>
+  <div class="confetti" style="top:18%;left:6%;"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.4 5.7 21l2.3-7.2-6-4.6h7.6z" fill="#FFC72C"/></svg></div>
+  <div class="confetti" style="top:65%;left:4%;"><svg width="16" height="16" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="#12AFC7" transform="rotate(18 12 12)"/></svg></div>
+  <div class="confetti" style="top:12%;right:7%;"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8 2.7 4 6.5 4c2 0 3.6 1.1 4.5 2.7C11.9 5.1 13.5 4 15.5 4 19.3 4 21.5 8 20 11.8 17.5 16.4 12 21 12 21z" fill="#EC1E79"/></svg></div>
+  <div class="confetti" style="top:58%;right:5%;"><svg width="16" height="16" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="#6C3FA6" transform="rotate(-12 12 12)"/></svg></div>
+  <div class="hero">
+    <div class="eyebrow">BEYOND WALLS PRESENTS</div>
+    <div class="host-pill">HOST: DR BRIDGETTE KAGONYE</div>
+    <div class="wordmark">
+      <span class="w1">UN</span><span class="w2">SP</span><span class="w3">O</span><span class="w4">K</span><span class="w5">EN</span>
+    </div>
+    <div class="wordmark2">CONVERSATIONS</div>
+    <div class="teens-edition">✦ TEENS EDITION ✦</div>
+    <p class="tagline">Navigating identity, puberty, belonging and mental health as a teen? Then this conversation is for you.</p>
+    <div class="topics">TEENS TALK &nbsp;|&nbsp; MENTAL HEALTH &nbsp;|&nbsp; GROOMING</div>
+  </div>
+
+  <div class="details">
+    <div class="detail-card"><div class="label">DATE</div><div class="value">8 Aug 2026</div></div>
+    <div class="detail-card"><div class="label">TIME</div><div class="value">9AM – 1PM</div></div>
+    <div class="detail-card"><div class="label">VENUE</div><div class="value">Karigamombe Centre, 13th Floor (ICMF)</div></div>
+    <div class="detail-card"><div class="label">INVESTMENT</div><div class="value">$20</div></div>
+  </div>
+</div>
+
+<main>
+  <div id="formView">
+    <h1 class="section-title">Register now</h1>
+    <p class="section-sub">Secure your teen's seat — spaces are limited</p>
+
+    <div class="bubble-card">
+      <form id="regForm">
+        <div class="field">
+          <label>Full name <span class="req">*</span></label>
+          <input type="text" id="f_name" placeholder="Teen's full name" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Age <span class="req">*</span></label>
+            <input type="number" id="f_age" placeholder="14" min="9" max="19" required>
+          </div>
+          <div class="field">
+            <label>Current school level <span class="req">*</span></label>
+            <select id="f_school" required>
+              <option value="" disabled selected>Select level</option>
+              <option>Primary school</option>
+              <option>Form 1</option>
+              <option>Form 2</option>
+              <option>Form 3</option>
+              <option>Form 4</option>
+              <option>Lower 6</option>
+              <option>Upper 6</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Current school <span class="req">*</span></label>
+            <input type="text" id="f_schoolname" placeholder="Name of school" required>
+          </div>
+          <div class="field">
+            <label>Phone number <span class="req">*</span></label>
+            <input type="tel" id="f_phone" placeholder="077 123 4567" required>
+          </div>
+        </div>
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" id="f_email" placeholder="name@email.com">
+        </div>
+
+        <div class="divider-label">Residential address</div>
+        <div class="field">
+          <label>Home address <span class="req">*</span></label>
+          <input type="text" id="f_address" placeholder="House/street, suburb" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Suburb / area <span class="req">*</span></label>
+            <input type="text" id="f_suburb" placeholder="e.g. Borrowdale" required>
+          </div>
+          <div class="field">
+            <label>City <span class="req">*</span></label>
+            <input type="text" id="f_city" placeholder="Harare" value="Harare" required>
+          </div>
+        </div>
+
+        <div class="divider-label">Parent / guardian details</div>
+        <div class="row2">
+          <div class="field">
+            <label>Parent/guardian name <span class="req">*</span></label>
+            <input type="text" id="f_gname" placeholder="Full name" required>
+          </div>
+          <div class="field">
+            <label>Parent/guardian contact <span class="req">*</span></label>
+            <input type="tel" id="f_gphone" placeholder="077 123 4567" required>
+          </div>
+        </div>
+
+        <label class="consent-row" for="f_consent">
+          <input type="checkbox" id="f_consent" checked>
+          <span>Yes, keep me updated — send me email and WhatsApp alerts about this event and future Unspoken Conversations events.</span>
+        </label>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Complete registration</button>
+      </form>
+
+      <div class="payment-box">
+        <h3>How to pay your $20 investment</h3>
+        <p>Pay via EcoCash or cash, then send your proof of payment on WhatsApp so we can confirm your seat.</p>
+        <ul>
+          <li>EcoCash to 077 816 6882</li>
+          <li>Cash on the day at registration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="success-box" id="successView">
+    <h2>You're registered! 🎉</h2>
+    <p>Thanks for signing up for The Unspoken Conversations — Teens Edition. Now send your EcoCash proof of payment (or confirm cash payment) on WhatsApp to lock in your seat.</p>
+    <a class="wa-btn" id="waPayLink" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.42.12.58-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.26.13.43.19.5.3.06.11.06.63-.18 1.31z"/></svg>
+      Send proof of payment
+    </a>
+  </div>
+
+  <div class="admin-toggle">
+    <button type="button" id="adminToggleBtn">View registrations (organizer)</button>
+  </div>
+  <div class="admin-panel" id="adminPanel">
+    <div class="count" id="adminCount">0 registrations</div>
+    <div class="scroll">
+      <table id="adminTable">
+        <thead><tr><th>Name</th><th>Age</th><th>School level</th><th>School</th><th>Phone</th><th>Email</th><th>Address</th><th>Guardian</th><th>Guardian phone</th><th>Alerts</th><th>Time</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="qr-wrap">
+    <img id="qrImg" src="" alt="QR code to registration page">
+  </div>
+  <p>Scan to open this registration page, or share the link directly on social media. The QR code always points to wherever this page is currently hosted.</p>
+  <div class="contact-line">Contact us: 077 816 6882</div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/263778166882?text=Hi!%20I'd%20like%20to%20know%20more%20about%20The%20Unspoken%20Conversations%20-%20Teens%20Edition%20on%208%20August%202026." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.42.12.58-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.26.13.43.19.5.3.06.11.06.63-.18 1.31z"/></svg>
+</a>
+
+<script>
+  const qrImg = document.getElementById('qrImg');
+  qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=340x340&data=' + encodeURIComponent(window.location.href);
+
+  const WA_NUMBER = '263778166882';
+
+  const form = document.getElementById('regForm');
+  const formView = document.getElementById('formView');
+  const successView = document.getElementById('successView');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Saving...';
+
+    const entry = {
+      name: document.getElementById('f_name').value.trim(),
+      age: document.getElementById('f_age').value.trim(),
+      school: document.getElementById('f_school').value,
+      schoolName: document.getElementById('f_schoolname').value.trim(),
+      phone: document.getElementById('f_phone').value.trim(),
+      email: document.getElementById('f_email').value.trim(),
+      address: document.getElementById('f_address').value.trim(),
+      suburb: document.getElementById('f_suburb').value.trim(),
+      city: document.getElementById('f_city').value.trim(),
+      guardianName: document.getElementById('f_gname').value.trim(),
+      guardianPhone: document.getElementById('f_gphone').value.trim(),
+      wantsAlerts: document.getElementById('f_consent').checked,
+      time: new Date().toISOString()
+    };
+
+    try {
+      const existing = await window.storage.get('registrations', true).catch(() => null);
+      const list = existing && existing.value ? JSON.parse(existing.value) : [];
+      list.push(entry);
+      await window.storage.set('registrations', JSON.stringify(list), true);
+    } catch (err) {
+      console.error('Storage error', err);
+    }
+
+    const waMsg = encodeURIComponent(
+      "Hi! I've registered for The Unspoken Conversations - Teens Edition.\nName: " + entry.name +
+      "\nHere is my proof of payment."
+    );
+    document.getElementById('waPayLink').href = 'https://wa.me/' + WA_NUMBER + '?text=' + waMsg;
+
+    formView.style.display = 'none';
+    successView.classList.add('show');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Complete registration';
+    refreshAdmin();
+  });
+
+  const adminToggleBtn = document.getElementById('adminToggleBtn');
+  const adminPanel = document.getElementById('adminPanel');
+  adminToggleBtn.addEventListener('click', () => {
+    adminPanel.classList.toggle('show');
+    if (adminPanel.classList.contains('show')) refreshAdmin();
+  });
+
+  async function refreshAdmin(){
+    try {
+      const existing = await window.storage.get('registrations', true).catch(() => null);
+      const list = existing && existing.value ? JSON.parse(existing.value) : [];
+      document.getElementById('adminCount').textContent = list.length + ' registration' + (list.length === 1 ? '' : 's');
+      const tbody = document.querySelector('#adminTable tbody');
+      tbody.innerHTML = '';
+      list.slice().reverse().forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = '<td>' + (r.name||'') + '</td><td>' + (r.age||'') + '</td><td>' + (r.school||'') +
+          '</td><td>' + (r.schoolName||'') + '</td><td>' + (r.phone||'') + '</td><td>' + (r.email||'') +
+          '</td><td>' + [r.address,r.suburb,r.city].filter(Boolean).join(', ') + '</td><td>' + (r.guardianName||'') +
+          '</td><td>' + (r.guardianPhone||'') + '</td><td>' + (r.wantsAlerts ? 'Yes' : 'No') +
+          '</td><td>' + new Date(r.time).toLocaleString() + '</td>';
+        tbody.appendChild(tr);
+      });
+    } catch (err) {
+      console.error('Could not load registrations', err);
+    }
+  }
+
+  refreshAdmin();
+</script>
+
+</body>
+</html>
